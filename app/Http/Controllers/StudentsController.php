@@ -110,6 +110,8 @@ class StudentsController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        Student::destroy($student->id);
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Dihapus!');
+       
     }
 }
